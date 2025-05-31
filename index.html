@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRH Associates | Civil Engineering Experts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="" href="css/particles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="images/logo.png" alt="GRH Associates Logo">
+                <span>GRH Associates</span>
+            </a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="gradient-text">Engineering Excellence Since 2013</h1>
+            <p>GRH Associates provides innovative civil engineering solutions with a focus on structural integrity, sustainable design, and client satisfaction.</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn">View Our Projects</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">Our Engineering Milestones</h2>
+                <p>A decade of excellence in civil engineering</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item glass">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-text">Years of Experience</div>
+                </div>
+                <div class="stat-item glass">
+                    <i class="fas fa-project-diagram"></i>
+                    <div class="stat-number">200+</div>
+                    <div class="stat-text">Projects Completed</div>
+                </div>
+                <div class="stat-item glass">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-number">150+</div>
+                    <div class="stat-text">Satisfied Clients</div>
+                </div>
+                <div class="stat-item glass">
+                    <i class="fas fa-award"></i>
+                    <div class="stat-number">25+</div>
+                    <div class="stat-text">Industry Awards</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">Our Engineering Services</h2>
+                <p>Comprehensive solutions for all your construction needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card glass">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Structural Engineering">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="gradient-text">Structural Engineering</h3>
+                        <p>Designing robust structures that stand the test of time and nature.</p>
+                        <ul>
+                            <li>Building structural analysis</li>
+                            <li>Seismic retrofitting</li>
+                            <li>Foundation design</li>
+                            <li>Steel & concrete structures</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card glass">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Construction Management">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="gradient-text">Construction Management</h3>
+                        <p>Overseeing projects from conception to completion with precision.</p>
+                        <ul>
+                            <li>Project scheduling</li>
+                            <li>Quality control</li>
+                            <li>Budget management</li>
+                            <li>Contract administration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="service-card glass">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1615529162924-f8605388463a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Building Interiors">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="gradient-text">Building Interiors</h3>
+                        <p>Creating functional and aesthetically pleasing interior spaces.</p>
+                        <ul>
+                            <li>Space planning</li>
+                            <li>Material selection</li>
+                            <li>MEP integration</li>
+                            <li>Lighting design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">Our Engineering Projects</h2>
+                <p>Showcasing our expertise through completed works</p>
+            </div>
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="infrastructure">Infrastructure</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-item" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Commercial Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Skyline Office Complex</h3>
+                        <p>25-story commercial building with sustainable design features</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Residential Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Riverside Apartments</h3>
+                        <p>Luxury residential complex with waterfront views</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="infrastructure">
+                    <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Infrastructure Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Highway Bridge System</h3>
+                        <p>3.5km bridge with advanced seismic protection</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Commercial Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Tech Innovation Center</h3>
+                        <p>State-of-the-art research and development facility</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Residential Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Green Valley Villas</h3>
+                        <p>Sustainable residential community with green spaces</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+                <div class="project-item" data-category="infrastructure">
+                    <img src="https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Infrastructure Project" class="project-img">
+                    <div class="project-overlay">
+                        <h3>Water Treatment Plant</h3>
+                        <p>Modern facility serving 500,000 residents</p>
+                        <a href="#" class="btn btn-outline">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">About GRH Associates</h2>
+                <p>Building the future with engineering excellence</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img glass">
+                    <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="About GRH Associates">
+                </div>
+                <div class="about-text">
+                    <h2 class="gradient-text">Engineering Solutions for Tomorrow's Challenges</h2>
+                    <p>Founded in 2013, GRH Associates has grown into a premier civil engineering firm known for innovative solutions and exceptional project delivery. With over a decade of experience, we've successfully completed projects across residential, commercial, and infrastructure sectors.</p>
+                    <p>Our team of licensed engineers combines technical expertise with practical construction knowledge to deliver designs that are both innovative and buildable. We pride ourselves on developing long-term relationships with clients by consistently delivering projects on time and within budget.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div>
+                                <h3>Innovative Solutions</h3>
+                                <p>We leverage the latest technologies and methodologies to solve complex engineering challenges.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h3>Client-Centric Approach</h3>
+                                <p>Your vision is our priority. We collaborate closely to ensure your objectives are met.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <h3>Sustainable Design</h3>
+                                <p>We integrate environmentally responsible practices into every project.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="btn">Schedule Consultation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">Contact Us</h2>
+                <p>Let's build something great together</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info glass">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Our Location</h4>
+                            <p>123 Engineering Boulevard, Suite 500<br>San Francisco, CA 94107</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone Number</h4>
+                            <p>+1 (415) 555-0123</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Address</h4>
+                            <p>info@grhassociates.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Monday-Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form glass">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>GRH Associates</h3>
+                    <p>Providing innovative civil engineering solutions with a focus on quality, sustainability, and client satisfaction since 2013.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Structural Engineering</a></li>
+                        <li><a href="#">Construction Management</a></li>
+                        <li><a href="#">Building Interiors</a></li>
+                        <li><a href="#">Site Development</a></li>
+                        <li><a href="#">Infrastructure Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 GRH Associates. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>
