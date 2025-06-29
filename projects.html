@@ -4,13 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Projects | GRH Associates</title>
-                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>k rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -180,6 +174,188 @@
             .filter-btn {
                 padding: 10px 20px;
                 font-size: 0.9rem;
+            }
+        }
+        
+        /* Project Dialog Styles */
+        .project-dialog {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .project-dialog.active {
+            display: flex;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .dialog-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.4s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dialog-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .dialog-title {
+            background: var(--accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--gold);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 5px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .close-btn:hover {
+            background: var(--accent-light);
+            transform: rotate(90deg);
+        }
+        
+        .dialog-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .dialog-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+            opacity: 0;
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+        
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dialog-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .dialog-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+        
+        .dialog-image img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .dialog-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .dialog-image::after {
+            content: '🔍';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(212, 175, 55, 0.9);
+            color: white;
+            padding: 8px;
+            border-radius: 50%;
+            font-size: 1rem;
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .dialog-image:hover::after {
+            opacity: 1;
+        }
+        
+        .dialog-description {
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .dialog-content {
+                padding: 20px;
+                margin: 10px;
+            }
+            
+            .dialog-images {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .dialog-title {
+                font-size: 1.4rem;
             }
         }
     </style>
@@ -438,6 +614,24 @@
         </div>
     </section>
 
+    <!-- Project Details Dialog -->
+    <div class="project-dialog" id="projectDialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 class="dialog-title" id="dialogTitle">Project Details</h2>
+                <button class="close-btn" onclick="closeDialog()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="dialog-description" id="dialogDescription">
+                <!-- Project description will be inserted here -->
+            </div>
+            <div class="dialog-images" id="dialogImages">
+                <!-- Project images will be inserted here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -490,6 +684,125 @@
     </footer>
 
     <script>
+        // Project data with multiple images for each project
+        const projectData = {
+            'AIZA Residential Complex': {
+                description: 'Modern residential development featuring contemporary architecture and sustainable design elements. This project showcases innovative urban planning with integrated green spaces and energy-efficient systems.',
+                images: [
+                    'images/projects/AIZA PROJECT.jpg',
+                    'images/projects/AIZA PROJECT-01.jpg',
+                    'images/projects/AIZA PROJECT-02.jpg'
+                ]
+            },
+            'Royal Villas Estate': {
+                description: 'Luxury villa development with premium amenities and elegant architectural design. Features include private gardens, modern amenities, and sophisticated interior design solutions.',
+                images: [
+                    'images/projects/ROYAL VILLAS ELEVATION -01.jpg',
+                    'images/projects/ROYAL VILLAS MAIN GATE-01.jpg'
+                ]
+            },
+            'Bindu Sister Elevation': {
+                description: 'Multi-story residential building with modern facade design and optimized space planning. The project emphasizes functional design with aesthetic appeal.',
+                images: [
+                    'images/projects/Bindu SISTER  ELEVATION.jpg',
+                    'images/projects/Bindu SISTER  ELEVATION-01.jpg',
+                    'images/projects/Bindu SISTER  ELEVATION-02.jpg',
+                    'images/projects/Bindu SISTER  ELEVATION-03.jpg'
+                ]
+            },
+            'YMG Commercial Complex': {
+                description: 'Contemporary commercial building with innovative design and efficient structural systems. Features state-of-the-art facilities and modern architectural elements.',
+                images: [
+                    'images/projects/YMG FINAL ELEVATION-33 copy.jpg',
+                    'images/projects/YMG FINAL- NORTH FACE-02.jpg',
+                    'images/projects/YMG FINAL- NORTH FACE-03.jpg',
+                    'images/projects/YMG FINAL- SOUTH FACE-01.jpg',
+                    'images/projects/YMG FINAL- WESTFACE-01 copy.jpg'
+                ]
+            },
+            'Ganesh Nagar Development': {
+                description: 'Comprehensive urban development project with integrated infrastructure and community planning. Includes residential, commercial, and recreational facilities.',
+                images: [
+                    'images/projects/ganesh nagar-01.jpg',
+                    'images/projects/ganesh nagar-02.jpg'
+                ]
+            },
+            'RO Commercial Building': {
+                description: 'Modern commercial facility with advanced structural engineering and energy-efficient design. Features innovative architectural solutions and sustainable building practices.',
+                images: [
+                    'images/projects/RO.jpg',
+                    'images/projects/RO-1.jpg'
+                ]
+            },
+            'Infrastructure Development': {
+                description: 'Comprehensive infrastructure planning and development with focus on efficiency and sustainability. Includes road networks, drainage systems, and utility planning.',
+                images: [
+                    'images/projects/east floor plan.jpg',
+                    'images/projects/east floor plan (1).jpg',
+                    'images/projects/west floor plan.jpg',
+                    'images/projects/EAST PLAN (R.jpg'
+                ]
+            }
+        };
+
+        // Function to open project dialog
+        function openProjectDialog(projectTitle) {
+            const dialog = document.getElementById('projectDialog');
+            const titleElement = document.getElementById('dialogTitle');
+            const descriptionElement = document.getElementById('dialogDescription');
+            const imagesContainer = document.getElementById('dialogImages');
+            
+            const project = projectData[projectTitle];
+            if (!project) return;
+            
+            // Set title and description
+            titleElement.textContent = projectTitle;
+            descriptionElement.textContent = project.description;
+            
+            // Clear and populate images
+            imagesContainer.innerHTML = '';
+            project.images.forEach((imageSrc, index) => {
+                const imageDiv = document.createElement('div');
+                imageDiv.className = 'dialog-image';
+                imageDiv.style.animationDelay = `${index * 0.1}s`;
+                
+                const img = document.createElement('img');
+                img.src = imageSrc;
+                img.alt = `${projectTitle} - Image ${index + 1}`;
+                img.onerror = () => {
+                    imageDiv.style.display = 'none';
+                };
+                
+                imageDiv.appendChild(img);
+                imagesContainer.appendChild(imageDiv);
+            });
+            
+            // Show dialog
+            dialog.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Function to close dialog
+        function closeDialog() {
+            const dialog = document.getElementById('projectDialog');
+            dialog.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close dialog when clicking outside content
+        document.getElementById('projectDialog').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeDialog();
+            }
+        });
+
+        // Close dialog on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeDialog();
+            }
+        });
+
         // Project filtering functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterBtns = document.querySelectorAll('.filter-btn');
@@ -519,6 +832,17 @@
                             }, 300);
                         }
                     });
+                });
+            });
+
+            // Add click handlers to view details buttons
+            const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+            viewDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const projectCard = btn.closest('.project-card');
+                    const projectTitle = projectCard.querySelector('.project-info h3').textContent;
+                    openProjectDialog(projectTitle);
                 });
             });
 
