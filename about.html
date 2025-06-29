@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Raghava G | GRH Associates</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .profile-hero {
+            padding: 120px 0 100px;
+            background: linear-gradient(135deg, #f8f6f0, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23d4af37" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23d4af37" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23d4af37" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .profile-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .profile-image-container {
+            position: relative;
+        }
+        
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            position: relative;
+            z-index: 2;
+            transition: var(--transition);
+        }
+        
+        .profile-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 70px rgba(0,0,0,0.2);
+        }
+        
+        .profile-image-bg {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            border-radius: 20px;
+            z-index: 1;
+        }
+        
+        .profile-intro h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .profile-title {
+            font-size: 1.4rem;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .profile-summary {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+        
+        .profile-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: var(--transition);
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+        
+        .expertise-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .expertise-card {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .expertise-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+        }
+        
+        .expertise-card h3 {
+            font-size: 1.4rem;
+            background: var(--accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .expertise-list li {
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .expertise-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: bold;
+        }
+        
+        .highlights-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f6f0, #ffffff);
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--gold);
+        }
+        
+        .highlight-card h3 {
+            background: var(--accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .highlight-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .philosophy-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f6f0, #ffffff);
+            text-align: center;
+        }
+        
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .philosophy-content h2 {
+            background: var(--accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        .philosophy-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        @media (max-width: 768px) {
+            .profile-header {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .profile-image-bg {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .profile-intro h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .expertise-grid,
+            .highlights-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="GRH Associates Logo">
+                <span>GRH Associates</span>
+            </a>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Hero Section -->
+    <section class="profile-hero">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-image-container">
+                    <div class="profile-image-bg"></div>
+                    <img src="images/profile/Raghava_Profile.jpeg" alt="Raghava G" class="profile-image">
+                </div>
+                <div class="profile-intro">
+                    <h1 class="gradient-text">Raghava G</h1>
+                    <div class="profile-title">
+                        <i class="fas fa-hard-hat"></i>
+                        Civil Engineer | B.Tech (Civil Engineering)
+                    </div>
+                    <p class="profile-summary">
+                        With a decade of hands-on experience since earning my B.Tech in Civil Engineering, I bring a comprehensive, end-to-end skill set spanning every phase of the built environment—from initial concept through detailed design, construction execution, and interior fit-out.
+                    </p>
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Expertise</h2>
+                <p class="section-subtitle">Combining technical rigor with creative problem-solving to deliver projects that are structurally sound, budget-conscious, and tailored to each client's vision.</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3>Structural & Architectural Design</h3>
+                    <ul class="expertise-list">
+                        <li>Concept development & schematic design</li>
+                        <li>Detailed drawings using AutoCAD, Revit, STAAD Pro</li>
+                        <li>Code compliance & peer reviews</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Development & Management</h3>
+                    <ul class="expertise-list">
+                        <li>Feasibility studies & cost estimation</li>
+                        <li>Scheduling, resource allocation, and risk mitigation</li>
+                        <li>Coordination with architects, MEP engineers, and consultants</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-helmet-safety"></i>
+                    </div>
+                    <h3>Construction & Site Supervision</h3>
+                    <ul class="expertise-list">
+                        <li>Quality assurance & safety oversight</li>
+                        <li>Vendor selection, contract administration, and procurement</li>
+                        <li>On-site troubleshooting and progress reporting</li>
+                    </ul>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Interior Fit-Out & Finishing</h3>
+                    <ul class="expertise-list">
+                        <li>Space planning, materials selection, and FF&E coordination</li>
+                        <li>Collaboration with interior designers and subcontractors</li>
+                        <li>Ensuring aesthetic integrity alongside functional performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Highlights Section -->
+    <section class="highlights-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Highlights</h2>
+                <p class="section-subtitle">Key achievements that demonstrate excellence in engineering and project delivery</p>
+            </div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3><i class="fas fa-building"></i> Multimillion-Dollar Commercial Complex</h3>
+                    <p>Led structural design and managed a cross-functional team to deliver on schedule and under budget, demonstrating exceptional project management and technical leadership skills.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-home"></i> High-End Residential Interiors</h3>
+                    <p>Spearheaded interior fit-out for luxury homes, achieving seamless integration of mechanical systems and bespoke finishes while maintaining the highest quality standards.</p>
+                </div>
+                <div class="highlight-card">
+                    <h3><i class="fas fa-road"></i> Infrastructure & Public Works</h3>
+                    <p>Oversaw road widening and drainage projects, ensuring minimal environmental impact and compliance with local regulations while delivering lasting community benefits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="container">
+            <div class="philosophy-content">
+                <h2><i class="fas fa-lightbulb"></i> Approach & Philosophy</h2>
+                <p class="philosophy-text">
+                    "I believe the best engineering solutions arise at the intersection of creativity, collaboration, and technical excellence. Whether working with clients to refine their vision or leading trades on a fast-paced construction site, I prioritize clear communication, meticulous planning, and an unwavering commitment to quality. My goal is always to transform ideas into enduring, functional spaces that stand the test of time."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="logo">
+                        <img src="images/logo.png" alt="GRH Associates Logo">
+                        <span>GRH Associates</span>
+                    </div>
+                    <p>Engineering excellence since 2013. Creating innovative civil engineering solutions with a focus on structural integrity and sustainable design.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#services">Structural Engineering</a></li>
+                        <li><a href="index.html#services">Construction Management</a></li>
+                        <li><a href="index.html#services">Building Interiors</a></li>
+                        <li><a href="index.html#services">Site Development</a></li>
+                        <li><a href="index.html#services">Infrastructure Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <p>Get in touch with us for your civil engineering needs.</p>
+                    <div class="contact-info" style="margin-top: 20px;">
+                        <p style="color: var(--text-secondary); margin-bottom: 10px;"><i class="fas fa-phone" style="margin-right: 10px; color: var(--gold);"></i> +91 98765 43210</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 10px;"><i class="fas fa-envelope" style="margin-right: 10px; color: var(--gold);"></i> info@grhassociates.com</p>
+                        <p style="color: var(--text-secondary); margin-bottom: 10px;"><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--gold);"></i> Bangalore, Karnataka</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 GRH Associates. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Add smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.expertise-card, .highlight-card, .stat-item');
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+
+        // Typing animation for the quote
+        const quote = document.querySelector('.philosophy-text');
+        if (quote) {
+            const text = quote.textContent;
+            quote.textContent = '';
+            let i = 0;
+            
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    const typeWriter = () => {
+                        if (i < text.length) {
+                            quote.textContent += text.charAt(i);
+                            i++;
+                            setTimeout(typeWriter, 30);
+                        }
+                    };
+                    typeWriter();
+                    observer.disconnect();
+                }
+            });
+            
+            observer.observe(quote);
+        }
+    </script>
+</body>
+</html>
