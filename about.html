@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Raghava G | GRH Associates</title>
+    <title>About Us - GRH Associates | Premier Civil Engineering Firm</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="shortcut icon" type="image/png" href="images/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
@@ -139,47 +141,104 @@
         
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
             margin-top: 60px;
         }
         
         .expertise-card {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
+            background-color: #f8f6f0;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
             transition: var(--transition);
-            border: 2px solid transparent;
         }
         
         .expertise-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--gold);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
         
         .expertise-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent), var(--gold));
+            background-color: #b8860b;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 25px;
-            font-size: 2rem;
+            flex-shrink: 0;
+        }
+        
+        .expertise-icon i {
+            font-size: 28px;
             color: white;
         }
         
-        .expertise-card h3 {
-            font-size: 1.4rem;
-            background: var(--accent);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 20px;
+        /* About Features Section */
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+            padding: 60px 0;
+        }
+        
+        .feature-item {
+            background-color: #f8f6f0;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            transition: var(--transition);
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            background-color: #b8860b;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            font-size: 28px;
+            color: white;
+        }
+        
+        .feature-item h3 {
+            font-size: 20px;
             font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+        
+        .feature-item p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .expertise-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 15px;
+            line-height: 1.3;
         }
         
         .expertise-list {
@@ -317,7 +376,26 @@
             .expertise-grid,
             .highlights-grid {
                 grid-template-columns: 1fr;
-                gap: 30px;
+                gap: 20px;
+            }
+            
+            .expertise-card {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 40px 0;
+            }
+            
+            .feature-item {
+                flex-direction: row;
+                text-align: left;
+                padding: 24px;
+                align-items: flex-start;
             }
         }
     </style>
@@ -344,6 +422,57 @@
             </nav>
         </div>
     </header>
+
+    <!-- About GRH Associates Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="gradient-text">About GRH Associates</h2>
+                <p>Building the future with engineering excellence</p>
+            </div>
+            <div class="about-content">
+                <div class="about-img glass">
+                    <img src="images/engineering/engineering_excellence.jpg" alt="About GRH Associates">
+                </div>
+                <div class="about-text">
+                    <h2 class="gradient-text">Engineering Solutions for Tomorrow's Challenges</h2>
+                    <p>Founded in 2013, GRH Associates has grown into a premier civil engineering firm known for innovative solutions and exceptional project delivery. With over a decade of experience, we've successfully completed projects across residential, commercial, and infrastructure sectors.</p>
+                    <p>Our team of licensed engineers combines technical expertise with practical construction knowledge to deliver designs that are both innovative and buildable. We pride ourselves on developing long-term relationships with clients by consistently delivering projects on time and within budget.</p>
+                    <a href="index.html#contact" class="btn">Schedule Consultation</a>
+                </div>
+            </div>
+            <!-- Company Features Section -->
+            <div class="about-features">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h3>Innovative Solutions</h3>
+                        <p>We leverage the latest technologies and methodologies to solve complex engineering challenges.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3>Client-Centric Approach</h3>
+                        <p>Your vision is our priority. We collaborate closely to ensure your objectives are met.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h3>Sustainable Design</h3>
+                        <p>We integrate environmentally responsible practices into every project.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Profile Hero Section -->
     <section class="profile-hero">
