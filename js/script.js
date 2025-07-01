@@ -1,8 +1,9 @@
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-        // Mobile Navigation Toggle
-        const mobileToggle = document.querySelector('.mobile-toggle');
-        const nav = document.querySelector('nav');
-        
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Navigation Toggle
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (mobileToggle && nav) {
         mobileToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
             mobileToggle.innerHTML = nav.classList.contains('active') ? 
@@ -16,10 +17,11 @@
                 mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
-        // Project Filtering
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectItems = document.querySelectorAll('.project-item');
+    }
+    
+    // Project Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
         
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
@@ -153,3 +155,4 @@
             },
             "retina_detect": true
         });
+});
