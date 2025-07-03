@@ -42,8 +42,50 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             });
         });
+    
+    // Stats Counter Animation
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumber = entry.target.querySelector('.stat-number');
+                if (statNumber && !statNumber.classList.contains('animated')) {
+                    const target = parseInt(statNumber.getAttribute('data-target'));
+                    animateCounter(statNumber, target);
+                    statNumber.classList.add('animated');
+                }
+            }
+        });
+    }, observerOptions);
+    
+    // Observe stat items
+    document.querySelectorAll('.stat-item').forEach(stat => {
+        statsObserver.observe(stat);
+    });
+    
+    // Counter animation function
+    function animateCounter(element, target) {
+        let current = 0;
+        const increment = target / 100;
+        const duration = 2000; // 2 seconds
+        const stepTime = duration / 100;
         
-        // Smooth Scrolling for Anchor Links
+        const timer = setInterval(() => {
+            current += increment;
+            element.textContent = Math.floor(current);
+            
+            if (current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            }
+        }, stepTime);
+    }
+    
+    // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
